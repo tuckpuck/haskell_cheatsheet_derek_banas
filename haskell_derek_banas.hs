@@ -75,3 +75,27 @@ everyOtherLetter = ['A', 'C' .. 'Z']
 --infinite list
 infinPow10 = [10, 20..]
 
+cycleList = take 10 (cycle [1,2,3,4,5])
+many2s = take 10 (repeat 2)
+many3s = replicate 10 3
+
+listTimes3 = [x * 3 | x <- [1..10], x * 3 <= 50]
+
+divideBy9and13 = [x | x <- [100..500], x `mod` 13 == 0 || x `mod` 9 == 0]
+
+sortedList = sort [9,1,3,5,7,2,7,3]
+
+sumOfLists = zipWith (+) [1,2,3,4,5][6,7,8,9,10]
+
+listBiggerThan5 = filter (>5) fullPrime
+
+evensUpTo20 = takeWhile (<=20) [2,4..]
+
+multOfListLeft = foldl (*) 1 [2,3,4,5]
+multOfListRight = foldr (*) 1 [2,3,4,5]
+
+pow3List = [3^n | n <- [1..10]]
+
+multiplicationTable = [[x * y | y <- [1..10]] | x <- [1..10]]
+
+
