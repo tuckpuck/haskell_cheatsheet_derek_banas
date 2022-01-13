@@ -98,4 +98,43 @@ pow3List = [3^n | n <- [1..10]]
 
 multiplicationTable = [[x * y | y <- [1..10]] | x <- [1..10]]
 
+-- Tuples
+randomTuple = (1, "Random Tuple")
+tuplePair = ("Tucker Triggs", 29)
+
+tuckerName = fst tuplePair
+tuckerAge = snd tuplePair
+
+names = ["Sherry", "Terry", "John"]
+addresses = ["123 Lane", "245 Way", "657 Blvd"]
+
+tuplePairs = zip names addresses
+
+-- creating funtions: funcName param1 param2 = operations (returned value)
+-- every function must return something. Can't begin with an uppercase letter
+addMe :: Int -> Int -> Int
+addMe x y = x + y
+
+addTuples :: (Int,Int) -> (Int,Int) -> (Int, Int)
+addTuples (a,b) (c,d) = (a+b,c+d)
+
+whatAge :: Int -> String
+whatAge 16 = "You can drive"
+whatAge 18 = "You can vote"
+whatAge 21 = "You're an adult"
+whatAge x = "You're " ++ show x ++ " years old"
+
+-- To run this, use ghc --make haskell_derek_banas.hs 
+-- then ./haskell_derek_banas
+main = do 
+    putStrLn ("What's your name?")
+    name <- getLine
+    putStrLn ("Hello " ++ name)
+
+
+
+
+
+
+
 
