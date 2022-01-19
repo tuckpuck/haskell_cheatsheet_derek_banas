@@ -1,3 +1,5 @@
+-- To run this program, open enclosing folder in VSCode and run 'ghci haskell_derek_banas.hs'
+
 -- comments
 {-
 Multiline comments
