@@ -163,6 +163,24 @@ getFirstItem :: String -> String
 getFirstItem [] = "Empty String"
 getFirstItem all@(x:xs) = "The first letter in " ++ all ++ " is " ++ show x
 
+-- higher order functions
+times4 :: Int -> Int
+times4 x = x * 4
+
+listTimes4 = map times4 [2,3,4,5,6]
+
+-- create our own map-type function
+multBy4 :: [Int] -> [Int]
+multBy4 [] = []
+multBy4 (x:xs) = times4 x : multBy4 xs
+
+-- Check if strings equal with recursion
+areStringsEq :: [Char] -> [Char] -> Bool
+areStringsEq [] [] = True 
+areStringsEq (x:xs)(y:ys) = x == y && areStringsEq xs ys
+areStringsEq _ _ = False
+
+
 
 -- To run this, use ghc --make haskell_derek_banas.hs 
 -- then ./haskell_derek_banas
