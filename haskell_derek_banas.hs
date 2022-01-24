@@ -153,6 +153,17 @@ batAvgRating hits atBats
     | otherwise = "You are a superstar"
     where avg = hits / atBats
 
+getListItems :: [Int] -> String
+getListItems [] = "Your list is empty"
+getListItems (x:[]) = "Your list starts with " ++ show x
+getListItems (x:y:[]) = "Your list contains " ++ show x ++ " and " ++ show y
+getListItems (x:xs) = "The first item is " ++ show x ++ " and the rest of the items are " ++ show xs
+
+getFirstItem :: String -> String
+getFirstItem [] = "Empty String"
+getFirstItem all@(x:xs) = "The first letter in " ++ all ++ " is " ++ show x
+
+
 -- To run this, use ghc --make haskell_derek_banas.hs 
 -- then ./haskell_derek_banas
 main = do 
