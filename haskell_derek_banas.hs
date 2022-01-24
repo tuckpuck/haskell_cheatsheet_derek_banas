@@ -112,7 +112,7 @@ addresses = ["123 Lane", "245 Way", "657 Blvd"]
 
 tuplePairs = zip names addresses
 
--- creating funtions: funcName param1 param2 = operations (returned value)
+-- creating functions: funcName param1 param2 = operations (returned value)
 -- every function must return something. Can't begin with an uppercase letter
 addMe :: Int -> Int -> Int
 addMe x y = x + y
@@ -126,12 +126,36 @@ whatAge 18 = "You can vote"
 whatAge 21 = "You're an adult"
 whatAge x = "You're " ++ show x ++ " years old"
 
+factorial :: Int -> Int
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+
+-- Gaurds
+isOdd :: Int -> Bool
+isOdd n 
+    | n `mod` 2 == 0 = False
+    | otherwise = True
+
+whatGrade :: Int -> String
+whatGrade age
+    | (age >= 5) && (age <= 6) = "Kindergarden"
+    | (age > 6) && (age <= 10) = "Elementary"
+    | (age > 10) && (age <= 14) = "Middle School"
+    | (age > 14) && (age <= 18) = "High School" 
+    | otherwise = "Go to college"
+
 -- To run this, use ghc --make haskell_derek_banas.hs 
 -- then ./haskell_derek_banas
 main = do 
     putStrLn ("What's your name?")
     name <- getLine
     putStrLn ("Hello " ++ name)
+
+
+
+
+
+
 
 
 
