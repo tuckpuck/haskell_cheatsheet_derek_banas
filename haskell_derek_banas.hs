@@ -144,6 +144,15 @@ whatGrade age
     | (age > 14) && (age <= 18) = "High School" 
     | otherwise = "Go to college"
 
+-- Where 
+batAvgRating :: Double -> Double -> String
+batAvgRating hits atBats
+    | avg <= 0.200 = "Terrible"
+    | avg <= 0.250 = "Average"
+    | avg <= 0.280 = "Good" 
+    | otherwise = "You are a superstar"
+    where avg = hits / atBats
+
 -- To run this, use ghc --make haskell_derek_banas.hs 
 -- then ./haskell_derek_banas
 main = do 
