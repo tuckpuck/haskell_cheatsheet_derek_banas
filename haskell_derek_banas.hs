@@ -180,6 +180,18 @@ areStringsEq [] [] = True
 areStringsEq (x:xs)(y:ys) = x == y && areStringsEq xs ys
 areStringsEq _ _ = False
 
+-- Pass a function into a function
+doMultiplication :: (Int -> Int) -> Int
+doMultiplication func = func 3
+
+number3Times4 = doMultiplication times4
+
+-- Return a function
+getAddFunc :: Int -> (Int -> Int) 
+getAddFunc x y = x + y
+
+adds3 = getAddFunc 3
+fourPlus3 = adds3 4
 
 
 -- To run this, use ghc --make haskell_derek_banas.hs 
