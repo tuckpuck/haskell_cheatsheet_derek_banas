@@ -206,7 +206,42 @@ doubleEvenNumber y =
     if (y `mod` 2 /= 0)
         then y
         else y * 2
+
         
+getClass :: Int -> String
+getClass x = case x of
+    5 -> "Go to kindergarden"
+    6 -> "Go to elementary school"
+    _ -> "Go away"
+
+-- Exporting modules
+-- module SampFunctions (getClass, doubleEvenNumbers) where
+
+-- Importing modules
+-- import System.IO
+
+-- Enumerated types
+data BaseballPlayer = Pitcher 
+                    | Catcher
+                    | Infielder
+                    | Outfield
+                deriving Show
+
+barryBonds :: BaseballPlayer -> Bool
+barryBonds Outfield = True
+
+barryInOF = print(barryBonds Outfield)
+
+-- Custom Enumerated Datatype
+data Customer = Customer String String Double
+    deriving Show
+
+tomSmith :: Customer
+tomSmith = Customer "Tom Smith" "123 Main" 20.50
+
+getBalance :: Customer -> Double
+getBalance (Customer _ _ b) = b
+
 
 
 
