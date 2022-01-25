@@ -193,6 +193,22 @@ getAddFunc x y = x + y
 adds3 = getAddFunc 3
 fourPlus3 = adds3 4
 
+threePlusList = map adds3 [1,2,3,4,5]
+
+-- Lambdas (functions without a name)
+dbl1to10 = map (\x -> x*2) [1..10]
+
+-- Conditionals
+-- < > <= >= == /=
+-- && || not
+
+doubleEvenNumber y = 
+    if (y `mod` 2 /= 0)
+        then y
+        else y * 2
+        
+
+
 
 -- To run this, use ghc --make haskell_derek_banas.hs 
 -- then ./haskell_derek_banas
