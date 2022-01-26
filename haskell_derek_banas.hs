@@ -243,6 +243,25 @@ getBalance :: Customer -> Double
 getBalance (Customer _ _ b) = b
 
 
+-- Multiple types
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float
+    deriving Show
+
+area :: Shape -> Float
+area (Circle _ _ r) = pi * r ^ 2
+area (Rectangle x y x2 y2) = abs (x2-x) * abs (y2-y)
+
+areaOfCircle = area (Circle 50 60 20)
+areaOfRect = area $ Rectangle 30 30 20 20
+
+
+-- Dot operator to chain functions
+sumValue = putStrLn(show(1+2))
+-- This is the same as above. Dot strings the functions together. Dollar sign replaces parenthesis
+sumValue2 :: IO ()
+sumValue2 = putStrLn . show $ 1 + 2
+
+
 
 
 -- To run this, use ghc --make haskell_derek_banas.hs 
