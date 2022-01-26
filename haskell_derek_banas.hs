@@ -322,6 +322,10 @@ readFromFile = do
     putStr contents
     hClose theFile2
 
+-- Create fibonacci
+fib = 1 : 1 : [a + b | (a,b) <- zip fib (tail fib)] 
+
+fibTo20 = take 20 fib
 
 -- To run this, use ghc --make haskell_derek_banas.hs 
 -- then ./haskell_derek_banas
