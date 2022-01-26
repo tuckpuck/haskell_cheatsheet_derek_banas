@@ -288,12 +288,39 @@ smallAvail = S `elem` [S,M,L]
 
 theSize = show S
 
+-- Custom type class to check for eq
+class MyEq a where
+    areEqual :: a -> a -> Bool
+
+data Shirtsize = Sm | Md | Lg
+
+instance MyEq Shirtsize where
+    areEqual Sm Sm = True
+    areEqual Md Md = True
+    areEqual Lg Lg = True
+    areEqual _ _ = False
+
+newSize = areEqual Md Md
 
 
+-- I/O. Do allows chaining of multiple things
+sayHello = do
+    putStrLn "What's your name"
+    name <- getLine
+    putStrLn $ "Hello " ++ name
 
+-- File I/O. Write to File
+writeToFile = do 
+    theFile <- openFile "test.txt" WriteMode
+    hPutStrLn theFile ("Random Line of Text")
+    hClose theFile
 
-
-
+-- File I/O. Write to File
+readFromFile = do 
+    theFile2 <- openFile "test.txt" ReadMode
+    contents <- hGetContents theFile2
+    putStr contents
+    hClose theFile2
 
 
 -- To run this, use ghc --make haskell_derek_banas.hs 
